@@ -115,11 +115,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="element_listy.cpp" />
+    <ClCompile Include="klasa_obslugi_dynamicznej_tablicy_wielowymiarowej_liczb_zespolonych.cpp" />
     <ClCompile Include="Liczba_zespolona.cpp" />
+    <ClCompile Include="lista_obiektow.cpp" />
+    <ClCompile Include="wskaznik.cpp" />
     <ClCompile Include="Źródło.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="element_listy.h" />
+    <ClInclude Include="klasa_obslugi_dynamicznej_tablicy_wielowymiarowej_liczb_zespolonych.h" />
     <ClInclude Include="Liczba_zespolona.h" />
+    <ClInclude Include="lsita_obiektow.h" />
+    <ClInclude Include="Wskaznik.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
