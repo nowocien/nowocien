@@ -109,8 +109,8 @@ real & Liczba_zespolona::operator[](int i) const
 //Zadanie 6
 bool & Liczba_zespolona::operator!=(const Liczba_zespolona & z2) const
 {
-	bool x = true;
-	if (this->IM != z2.IM_get() && this->RE != z2.RE_get())  
+	bool x = true; 
+	if (this->IM != z2.IM_get() || this->RE != z2.RE_get())  
 		return x;  
 
 	x = false;
@@ -128,7 +128,6 @@ std::istream & operator>>(std::istream & ekran, Liczba_zespolona & liczba)
 	ekran >> liczba.RE >> liczba.IM;
 	return ekran;
 }
-
 
 //Zadanie 8
 Liczba_zespolona & Liczba_zespolona::operator=(const Liczba_zespolona & liczba)
@@ -148,37 +147,30 @@ Liczba_zespolona & Liczba_zespolona::operator=(const Liczba_zespolona & liczba)
 //Zadanie 9
 bool & Liczba_zespolona::operator==(const Liczba_zespolona & z2) const
 {
-	bool x = !(this != &z2); 
+	bool x = true;
+	if (this->IM == z2.IM_get() && this->RE == z2.RE_get())
+		return x;
+
+	x = false;
 	return x;
+}//to ³adnie skomentuj prowadzacemu 
+
+
+//Zadanie 10
+Liczba_zespolona & Liczba_zespolona::operator++()
+{
+	this->RE++;
+	return *this;
 }
 
 
-////Zadanie 10
-//Liczba_zespolona & Liczba_zespolona::operator++()
-//{
-//	this->RE += 1;
-//	return *this;
-//}
-////Zadanie 12
-//Liczba_zespolona & Liczba_zespolona::operator()(real RE, real IM)
-//{
-//	this->set1(RE);
-//	this->set2(IM);
-//	return *this;
-//}
-////Zadanie 13
-//Liczba_zespolona & Liczba_zespolona::operator^(real i)
-//{
-//	Liczba_zespolona *temp = new Liczba_zespolona;
-//	temp = this;
-//	real a = temp->get1();
-//	real b = temp->get2();
-//	for (int j = 1; j < i; j++)
-//	{
-//		real A = this->get1();
-//		real B = this->get2();
-//		this->set1((a*A) - (b*B));
-//		this->set2((a*B) + (A*b));
-//	} return *
-//		this;
-//}
+//Zadanie 12
+Liczba_zespolona & Liczba_zespolona::operator()(real RE, real IM)
+{
+	this->RE_set(RE);
+	this->IM_set(IM);
+	return *this;
+}
+
+
+ 

@@ -34,19 +34,27 @@ void main()
 	f += z;
 
 	if (z == k)
-		std::cout << "rowne" << std::endl;
+		std::cout << "true" << std::endl;
+	else
+		std::cout << "false" << std::endl;
 
 	if (z != k)
 		std::cout << "false" << std::endl;
+	else
+		std::cout << "true" << std::endl;
 
 
 	k = z;
 
 	if (z == k)
-		std::cout << "rowne" << std::endl;
+		std::cout << "true" << std::endl;
+	else
+		std::cout << "false" << std::endl;
 
 	if (z != k)
 		std::cout << "false" << std::endl;
+	else
+		std::cout << "true" << std::endl;
 
 	std::cout << z;
 	std::cout << k;
