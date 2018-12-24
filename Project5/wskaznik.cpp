@@ -1,6 +1,5 @@
 
-#include "Wskaznik.h"
-#include <utility>
+#include "Wskaznik.h" 
 
 
 Wskaznik::Wskaznik(Wskaznik && wsk) :liczba(std::move(wsk.liczba))

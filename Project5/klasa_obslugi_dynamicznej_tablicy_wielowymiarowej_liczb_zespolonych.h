@@ -1,6 +1,6 @@
 #pragma once
 #include "Liczba_zespolona.h"
-class ob_lz
+class kdodtw_lz
 {
 private:
 	int x;
@@ -9,12 +9,12 @@ private:
 
 public:
 
-	ob_lz(); //k. bezargumentowy
-	ob_lz(int x, int y);//k.2-argumentowy
-	~ob_lz();//dek.
+	kdodtw_lz(); //k. bezargumentowy
+	kdodtw_lz(int x, int y);//k.2-argumentowy
+	~kdodtw_lz();//dek.
 
-	ob_lz(ob_lz&& tab); //k. przenosz¹cy
+	kdodtw_lz(kdodtw_lz&& tab); //k. przenosz¹cy
 
-	ob_lz& operator=(ob_lz && tab); //op. przeniesienia 
+	kdodtw_lz& operator=(kdodtw_lz && tab); //op. przeniesienia 
 };
 

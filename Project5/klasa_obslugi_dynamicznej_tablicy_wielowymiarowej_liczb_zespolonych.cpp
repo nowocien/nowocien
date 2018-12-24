@@ -1,7 +1,7 @@
 #include "klasa_obslugi_dynamicznej_tablicy_wielowymiarowej_liczb_zespolonych.h"
 
 
-ob_lz::ob_lz(int x, int y)
+kdodtw_lz::kdodtw_lz(int x, int y)
 	:x(x), y(y)
 { 
 	this->tab = new Liczba_zespolona*[y];
@@ -12,13 +12,13 @@ ob_lz::ob_lz(int x, int y)
 	}
 }
 
-ob_lz::ob_lz()
+kdodtw_lz::kdodtw_lz()
 	:x(0), y(0)
 { 
 }
 
 
-ob_lz::~ob_lz()
+kdodtw_lz::~kdodtw_lz()
 {
 	for (int i = 0; i < y; i++)
 	{
@@ -27,9 +27,9 @@ ob_lz::~ob_lz()
 	delete tab; 
 }
 
-ob_lz::ob_lz(ob_lz && t) :x(std::move(t.x)), y(std::move(t.y)), tab(std::move(t.tab))
+kdodtw_lz::kdodtw_lz(kdodtw_lz && t) :x(std::move(t.x)), y(std::move(t.y)), tab(std::move(t.tab))
 {
-}ob_lz & ob_lz::operator=(ob_lz && t)
+}kdodtw_lz & kdodtw_lz::operator=(kdodtw_lz && t)
 {
 	x = std::move(t.x);
 	y = std::move(t.y);
