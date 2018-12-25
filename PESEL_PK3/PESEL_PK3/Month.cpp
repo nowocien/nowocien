@@ -26,4 +26,5 @@ void Month::Udpate_offset_and_char_notatnion(int offset)
 
 Month::~Month()
 {
+	delete cDisplay_date;  
 }

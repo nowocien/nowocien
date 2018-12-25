@@ -9,10 +9,13 @@ public:
 	Date(int date);
 	 
 	void Wypisz(); 
-	void Udpate_offset_and_char_notatnion(int offset);
+	void Udpate_offset_and_char_notatnion(int offset); 
+	void Update_char_notation();
 
 	int &operator+=(int &);
 	int &operator-=(int &);
+
+	int* int_array;
 
 protected:
 	int exact_date;

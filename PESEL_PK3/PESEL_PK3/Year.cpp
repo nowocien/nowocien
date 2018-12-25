@@ -16,4 +16,5 @@ Year::Year(int date)
 
 Year::~Year()
 {
+	delete cDisplay_date;
 }

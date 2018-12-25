@@ -1,6 +1,11 @@
 #pragma once
 
 #include "sex.h"
+#include "Date.h"
+#include "Day.h"
+#include "Month.h"
+#include "Year.h"
+#include "Gender.h"
 
 class Pesel
 {
@@ -14,11 +19,15 @@ public:
 	Pesel(const char* pesel);
 
 
+	Day day;
+	Month month;
+	Year year;
+
+	Gender gender;
+
 private:
-	int day, month, year;
-	int pin, checksum;
-	Sex sex;
-	Sex analiseSex(int pin);
+
+	int pin, checksum; 
 	
 };
 

@@ -16,4 +16,5 @@ Day::Day(int date)
 
 Day::~Day()
 {
+	delete cDisplay_date; 
 }

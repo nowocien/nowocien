@@ -11,6 +11,15 @@ Date::Date(int date)
 	this->cDisplay_date = new char[display_length];
 }
 
+void Date::Update_char_notation(){ 
+	int temp = exact_date;
+
+	for (int i = 2; i > 0; i--)	{
+		int_array[i - 1] = (temp % 10);
+		temp /= 10;
+	}
+}
+
 void Date::Udpate_offset_and_char_notatnion(int offset)
 {	
 	display_date = offset + exact_date; 
@@ -40,6 +49,5 @@ void Date::Wypisz()
 }
 
 Date::~Date()
-{
-	delete cDisplay_date;
+{ 
 }
