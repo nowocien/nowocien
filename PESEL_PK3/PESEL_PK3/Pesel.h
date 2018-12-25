@@ -23,6 +23,7 @@ public:
 	Year getYear()const;
 	PIN getPIN()const;
 
+	int checksum;
 
 	Day day;
 	Month month;
@@ -34,7 +35,6 @@ public:
 private:	
 	
 	PIN pin;
-	int checksum; 
 	
 };
 

@@ -5,8 +5,7 @@
 Year::Year(){
 }
 
-Year::Year(int date){
-	className = (char*)"rok";
+Year::Year(int date){ 
 	this->exact_date = date;
 	this->display_date = date;
 	Update_char_notation();

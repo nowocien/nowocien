@@ -151,8 +151,10 @@
     <ClInclude Include="Date.h" />
     <ClInclude Include="Day.h" />
     <ClInclude Include="Gender.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Month.h" />
     <ClInclude Include="Pesel.h" />
+    <ClInclude Include="PeselGenerate.h" />
     <ClInclude Include="PIN.h" />
     <ClInclude Include="sex.h" />
     <ClInclude Include="stdafx.h" />
@@ -164,8 +166,10 @@
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="Day.cpp" />
     <ClCompile Include="Gender.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Month.cpp" />
     <ClCompile Include="Pesel.cpp" />
+    <ClCompile Include="PeselGenerate.cpp" />
     <ClCompile Include="PESEL_PK3.cpp" />
     <ClCompile Include="PIN.cpp" />
     <ClCompile Include="stdafx.cpp">

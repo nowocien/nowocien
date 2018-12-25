@@ -9,8 +9,8 @@ public:
 	Date(int date);
 	 
 
-	Date &operator+=(int &);
-	int &operator-=(int &);
+	Date& operator+=(int);
+	Date& operator-=(int);
 	friend std::ostream & operator<<(std::ostream & screen, const Date & d);
 
 	int* int_array;
@@ -19,14 +19,13 @@ public:
 	 
 	void SetOffset(int);
 
-protected: 
-	char* className;
+protected:  
 	int exact_date;
 	int display_date ;
 
 	int int_array_length;
 
-	void Update_char_notation();
-	void Update_display_string();
+	void Update_char_notation() ;
+	void Update_display_string() ;
 };
 

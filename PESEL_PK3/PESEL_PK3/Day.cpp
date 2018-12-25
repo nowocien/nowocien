@@ -5,8 +5,7 @@
 Day::Day(){
 }
 
-Day::Day(int date){
-	className = (char*)"dzien";
+Day::Day(int date){ 
 	this->exact_date = date;
 	this->display_date = date;
 	Update_char_notation();

@@ -9,8 +9,7 @@ const char* cMonth_names[] = {"stycznia", "lutego", "marca", "kwietnia", "maja",
 Month::Month() {
 }
 
-Month::Month(int date){
-	className = (char*)"miesiac";
+Month::Month(int date){ 
 	this->exact_date = date;
 	this->display_date = date;
 	Update_char_notation();

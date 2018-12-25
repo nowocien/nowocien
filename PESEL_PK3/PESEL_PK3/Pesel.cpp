@@ -20,15 +20,14 @@ Pesel::Pesel(long long int number)
 {
 	this->checksum = number % 10;
 	number /= 10;
-	this->pin = number % 10000;
+	this->pin = PIN(number % 10000);
 	number /= 10000;
-
-
-	this->day = number % 100;
+	 
+	this->day = Day(number % 100);
 	number /= 100;
-	this->month = number % 100;
+	this->month = Month(number % 100);
 	number /= 100;
-	this->year = number % 100;
+	this->year = Year(number % 100);
 
 	//brak koniecznosci podawania PESEL w innej zmiennej niz int (np *char) poniewa¿ ka¿dy miesiac musi 
 	//skladaæ sie z numerów wiekszych ni¿ jeden a rok nawet 2000 poprawnie zostanie zinterpretowany ;

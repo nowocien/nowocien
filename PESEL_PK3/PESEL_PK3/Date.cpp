@@ -9,7 +9,6 @@ Date::Date() {
  
 
 Date::Date(int date) {
-	className = (char*)"data";	
 	this->exact_date = date;
 	this->display_date = date;
 	Update_char_notation();
@@ -17,7 +16,7 @@ Date::Date(int date) {
 	
 }
 
-void Date::Update_char_notation(){ 
+void Date::Update_char_notation() { 
 	int temp = exact_date; 
 
 	for (int i = int_array_length; i > 0; i--)	{
@@ -25,15 +24,9 @@ void Date::Update_char_notation(){
 		temp /= 10;
 	}
 }
+ 
 
-
-void Date::SetOffset(int _offset) {
-	display_date += _offset; 
-	this->Update_display_string();
-}
-  
-
-void Date::Update_display_string() {
+void Date::Update_display_string()   {
 	int temp = display_date;
 
 	display_string_length = 1; 
@@ -48,20 +41,26 @@ void Date::Update_display_string() {
 		temp /= 10;
 	}
 }
+ 
 
+void Date::SetOffset(int _offset) {
+	display_date += _offset;
+	this->Update_display_string();
+}
 
-
-Date& Date::operator+=(int &prawy){
-	this->exact_date = this->exact_date + prawy;
-	Update_char_notation(); 
+Date & Date::operator+=(int prawy){
+	this->exact_date += prawy;
+	this->display_date += prawy;
+	Update_char_notation();
 	Update_display_string();
 	return *this;
 }
-int& Date::operator-=(int &prawy) {
-	this->exact_date = this->exact_date - prawy;
+Date & Date::operator-=(int prawy) {
+	this->exact_date -= prawy;
+	this->display_date -= prawy;
 	Update_char_notation();
 	Update_display_string();
-	return this->exact_date;
+	return *this;
 }
 
 std::ostream & operator<<(std::ostream & screen, const Date & d)
