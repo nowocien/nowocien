@@ -8,8 +8,8 @@ public:
 	~Gender(); 
 
 	static Sex analiseSex(int pin);
-	int get_number();
-	Sex get_mark();
+	int get_number() const;
+	Sex get_mark() const;
 
 private:
 	Sex sex_mark;
