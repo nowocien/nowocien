@@ -6,8 +6,7 @@ public:
 	PIN();
 	PIN(int);
 	~PIN(); 
-
-
+	
 	int* int_array;
 	Gender gender;
 

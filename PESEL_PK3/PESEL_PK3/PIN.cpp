@@ -1,14 +1,13 @@
 #include "stdafx.h"
 #include "PIN.h"
 
-PIN::PIN() {}
+PIN::PIN() {
+}
 
-PIN::PIN(int _pin)
-{
-
-	gender = Gender(_pin%10);
+PIN::PIN(int _pin) {
+	gender = Gender(_pin % 10);
 	_pin /= 10;
-	 
+
 	int pin_length = 3;
 	this->pin = _pin;
 	int_array = new int[pin_length];
@@ -20,7 +19,6 @@ PIN::PIN(int _pin)
 }
   
 
-PIN::~PIN()
-{
+PIN::~PIN(){
 	//delete int_array;
 }
