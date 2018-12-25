@@ -13,8 +13,10 @@ Date::Date(int date)
 
 void Date::Update_char_notation(){ 
 	int temp = exact_date;
+	int int_array_length = 2;
+	int_array = new int[int_array_length];
 
-	for (int i = 2; i > 0; i--)	{
+	for (int i = int_array_length; i > 0; i--)	{
 		int_array[i - 1] = (temp % 10);
 		temp /= 10;
 	}

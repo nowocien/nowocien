@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "Pesel.h"
-#include "Date.h"
-#include "Gender.h"
+#include "Date.h" 
 
 Pesel::Pesel(const char* pesel)
 {
@@ -13,20 +12,22 @@ Pesel::Pesel(int day, int month, int year, int pin, int checksum)
 	this->day = Day(day);
 	this->month = Month(month);
 	this->year = Year(year);
-
-	this->pin = pin;
+	 
 	this->checksum = checksum;
-	this->iSex = pin % 10;
-	this->sex = Gender::analiseSex(this->pin); 
+	this->pin = PIN(pin); 
+	
 
 	this->day.Udpate_offset_and_char_notatnion(0);
 	this->day.Wypisz();
+	this->day.Update_char_notation();
 
 	this->month.Udpate_offset_and_char_notatnion(0);
 	this->month.Wypisz();
+	this->month.Update_char_notation();
 
 	this->year.Udpate_offset_and_char_notatnion(1900);
 	this->year.Wypisz();
+	this->year.Update_char_notation();
 }
 
 Pesel::Pesel(long long int number)
@@ -46,7 +47,7 @@ Pesel::Pesel(long long int number)
 	//brak koniecznosci podawania PESEL w innej zmiennej niz int (np *char) poniewa¿ ka¿dy miesiac musi 
 	//skladaæ sie z numerów wiekszych ni¿ jeden a rok nawet 2000 poprawnie zostanie zinterpretowany ;
 
-	this->sex = Gender::analiseSex(this->pin);
+	//this->sex = Gender::analiseSex(this->pin);
 
 }
 

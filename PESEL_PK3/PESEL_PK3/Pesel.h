@@ -5,7 +5,7 @@
 #include "Day.h"
 #include "Month.h"
 #include "Year.h"
-#include "Gender.h"
+#include "PIN.h"
 
 class Pesel
 {
@@ -23,11 +23,11 @@ public:
 	Month month;
 	Year year;
 
-	Gender gender;
+	PIN pin;
 
 private:
 
-	int pin, checksum; 
+	int checksum; 
 	
 };
 

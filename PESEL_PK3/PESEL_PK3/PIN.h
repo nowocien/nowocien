@@ -7,10 +7,12 @@ public:
 	PIN(int);
 	~PIN(); 
 
-private:
-	int pin; //nie zawiera informacji o plci 
+
 	int* int_array;
 	Gender gender;
+
+private:
+	int pin; //nie zawiera informacji o plci 
 
 };
 
