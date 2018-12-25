@@ -17,7 +17,8 @@ public:
 protected:
 	int exact_date;
 	int display_date ;
-	const int display_length = 2;
 	char* cDisplay_date;
+	char* className;
+	int display_length;
 };
 

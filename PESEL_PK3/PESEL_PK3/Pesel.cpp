@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "Pesel.h"
 #include "Date.h"
+#include "Day.h"
+#include "Month.h"
+#include "Year.h"
 
 
 Pesel::Pesel(const char* pesel)
@@ -16,11 +19,19 @@ Pesel::Pesel(int day, int month, int year, int pin, int checksum)
 	this->pin = pin;
 	this->checksum = checksum;
 
-	this->sex = analiseSex(this->pin);
-	
-	Date dat = Date(year);
-	dat.Udpate_offset_and_char_notatnion(1900);
-	dat.Wypisz();
+	this->sex = analiseSex(this->pin); 
+
+	Month dat2 = Month(12);
+	dat2.Udpate_offset_and_char_notatnion(0);
+	dat2.Wypisz(); 
+
+	Day dat3 = Day(22);
+	dat3.Udpate_offset_and_char_notatnion(0);
+	dat3.Wypisz(); 
+
+	Year dat4 = Year(95);
+	dat4.Udpate_offset_and_char_notatnion(1900);
+	dat4.Wypisz();
 }
 
 Pesel::Pesel(long long int number)

@@ -2,17 +2,19 @@
 #include "Date.h"
 
 Date::Date() {}
+ 
 
 Date::Date(int date) 
 {
-	this->exact_date = date;
-	//this->display_length = display_length;
-	cDisplay_date = new char[display_length];
+	className = (char*)"data";
+	this->exact_date = date; 
+	this->cDisplay_date = new char[display_length];
 }
 
 void Date::Udpate_offset_and_char_notatnion(int offset)
 {	
-	display_date = offset + exact_date;
+	display_date = offset + exact_date; 
+
 	int temp = display_date;
 	for (int i = display_length; i > 0; i--)
 	{
@@ -33,13 +35,8 @@ int& Date::operator-=(int &prawy) {
  
 void Date::Wypisz()
 {
-	std::cout << std::endl << "data to:";
-	for (int i = 0; i < display_length; i++)  
-	{
-		std::cout << cDisplay_date[i];
-	}
-	std::cout << std::endl;
-
+	std::cout << className << " to:";
+	std::cout << cDisplay_date << std::endl;
 }
 
 Date::~Date()

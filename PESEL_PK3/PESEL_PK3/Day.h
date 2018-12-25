@@ -6,9 +6,8 @@ class Day : public Date
 {
 public:
 	Day();
+	Day(int date);
 	~Day();
-
-private: 
-	const int display_length = 2;
+	 
 };
 

@@ -7,6 +7,8 @@ Samolot::Samolot()
 {
 }
 
+const char*  Tab[] = { "1+2", "2-1","333-33", NULL };
+
 Samolot::Samolot(int paliwo, int dystans, int x, int y, int z, int wysokosc, Silnik pslinik)
 {
 	this->paliwo = paliwo;
@@ -15,7 +17,7 @@ Samolot::Samolot(int paliwo, int dystans, int x, int y, int z, int wysokosc, Sil
 	this->y = y;
 	this->z = x;
 	this->wysokosc = wysokosc;
-	this->pslinik = pslinik;
+//	this->pslinik = pslinik; 
 }
 
 

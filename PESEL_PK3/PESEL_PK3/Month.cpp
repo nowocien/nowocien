@@ -2,24 +2,27 @@
 #include "Month.h"
 
 
-const char* Month::cMonth_names[] = { "styqqqqqqqqqqcznia","lutego", "marca", "kwietnia", "maja", "czerwca", "lipca",
-"sierpnia", "wrzesnia", "pazdizernika", "listopada", "grudnia" }; 
+const char* cMonth_names[] = {"stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca",
+"sierpnia", "wrzesnia", "pazdizernika", "listopada", "grudnia" };
  
+Month::Month(int date)
+{
+	className = (char*)"miesiac";
+	display_length = 2;
+	this->exact_date = date;
+	this->cDisplay_date = new char[display_length];
+}
+
 Month::Month()
 {
 }
 
 void Month::Udpate_offset_and_char_notatnion(int offset)
-{
+{ 
 	display_date = offset + exact_date;
-	cDisplay_date = cMonth_names[display_date];
+	cDisplay_date = (char*)cMonth_names[display_date-1];
 }
 
-void Date::Wypisz()
-{
-	std::cout << std::endl << "miesiac to:";
-	std::cout << cDisplay_date;
-}
 
 Month::~Month()
 {
