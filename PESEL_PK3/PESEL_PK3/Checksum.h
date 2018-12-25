@@ -5,10 +5,12 @@ class Checksum
 {
 public:
 	Checksum();
-	Checksum(Pesel);
+	Checksum(const Pesel);
 	~Checksum();
 
 	int get();
+
+
 
 private:
 	int checksum;

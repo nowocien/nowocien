@@ -7,7 +7,7 @@ Pesel::Pesel(const char* pesel)
 
 }
 
-Pesel::Pesel(int day, int month, int year, int pin, int checksum)
+Pesel::Pesel(int year, int month, int day, int pin, int checksum)
 {
 	this->day = Day(day);
 	this->month = Month(month);
@@ -51,7 +51,33 @@ Pesel::Pesel(long long int number)
 
 }
 
+std::ostream & operator<<(std::ostream & ekran, const Pesel & p)
+{
+	int _genderMark = p.pin.gender.get_number();
 
+	ekran << p.year.int_array[0] << p.year.int_array[1] << p.month.int_array[0]
+		<< p.month.int_array[1] << p.day.int_array[0] << p.day.int_array[1]
+		<< p.pin.int_array[0] << p.pin.int_array[1] << p.pin.int_array[2]
+		<< _genderMark << p.checksum <<std::endl;
+	return ekran;
+}
+
+
+Day Pesel::getDay()const {
+	return day;
+}
+
+Month Pesel::getMonth()const {
+	return month;
+}
+
+Year Pesel::getYear()const {
+	return year;
+}
+
+PIN Pesel::getPIN()const {
+	return pin;
+}
 
 
 Pesel::~Pesel()

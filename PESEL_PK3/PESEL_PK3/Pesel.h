@@ -18,15 +18,20 @@ public:
 	Pesel(long long int number);
 	Pesel(const char* pesel);
 
+	Day getDay()const;
+	Month getMonth()const;
+	Year getYear()const;
+	PIN getPIN()const;
+	
+	friend std::ostream & operator<<(std::ostream & screen, const Pesel & p);
 
+
+private:	
+	
 	Day day;
 	Month month;
 	Year year;
-
 	PIN pin;
-
-private:
-
 	int checksum; 
 	
 };
