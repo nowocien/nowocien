@@ -6,8 +6,6 @@ class Day : public Date
 {
 public:
 	Day();
-	Day(int date);
-	~Day();
-	 
+	Day(int date); 	 
 };
 
