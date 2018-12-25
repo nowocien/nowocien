@@ -1,11 +1,11 @@
 #include "stdafx.h"
 #include "Date.h"
 
-Date::Date() {}
+Date::Date() {
+}
  
 
-Date::Date(int date) 
-{
+Date::Date(int date) {
 	className = (char*)"data";
 	this->exact_date = date; 
 	this->cDisplay_date = new char[display_length];
@@ -44,12 +44,11 @@ int& Date::operator-=(int &prawy) {
 	return temp;
 }
  
-void Date::Wypisz()
-{
+void Date::Wypisz(){
 	std::cout << className << " to:";
 	std::cout << cDisplay_date << std::endl;
 }
 
-Date::~Date()
-{ 
+Date::~Date(){  
+	//delete cDisplay_date; 
 }

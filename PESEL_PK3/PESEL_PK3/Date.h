@@ -4,8 +4,8 @@
 class Date
 {
 public: 
-	~Date();
-	Date();
+	virtual ~Date();
+    Date();
 	Date(int date);
 	 
 	void Wypisz(); 
