@@ -5,8 +5,9 @@ class Month : public Date
 public:
 
 	Month();
-	Month(int);
-	void Udpate_offset_and_char_notatnion(int offset);
+	Month(int); 
+
+	void Update_display_string(); 
 
 };
 

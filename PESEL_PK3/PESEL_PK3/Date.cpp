@@ -2,19 +2,23 @@
 #include "Date.h"
 
 Date::Date() {
+
+	int_array_length = 2;
+	int_array = new int[int_array_length]; 
 }
  
 
 Date::Date(int date) {
-	className = (char*)"data";
-	this->exact_date = date; 
-	this->cDisplay_date = new char[display_length];
+	className = (char*)"data";	
+	this->exact_date = date;
+	this->display_date = date;
+	Update_char_notation();
+	Update_display_string();
+	
 }
 
 void Date::Update_char_notation(){ 
-	int temp = exact_date;
-	int int_array_length = 2;
-	int_array = new int[int_array_length];
+	int temp = exact_date; 
 
 	for (int i = int_array_length; i > 0; i--)	{
 		int_array[i - 1] = (temp % 10);
@@ -22,32 +26,55 @@ void Date::Update_char_notation(){
 	}
 }
 
-void Date::Udpate_offset_and_char_notatnion(int offset)
-{	
-	display_date = offset + exact_date; 
 
+void Date::SetOffset(int _offset) {
+	display_date += _offset; 
+	this->Update_display_string();
+}
+  
+
+void Date::Update_display_string() {
 	int temp = display_date;
-	for (int i = display_length; i > 0; i--)
-	{
-		//zapewnia nam konwersjê liczby typu int na char; u³atwienie wypisywania 
-		cDisplay_date[i - 1] = (temp % 10) + '0';
+
+	display_string_length = 1; 
+	while (pow(10, display_string_length) < display_date) { 
+		display_string_length++;
+	}
+	  
+	cDisplay_date = new char[display_string_length]; 
+
+	for (int i = display_string_length; i > 0; i--) {
+		cDisplay_date[i - 1] = '0' + (temp % 10);
 		temp /= 10;
-	} 
+	}
 }
 
-int& Date::operator+=(int &prawy){
-	int temp = this->exact_date + prawy;
-	return temp;
+
+
+Date& Date::operator+=(int &prawy){
+	this->exact_date = this->exact_date + prawy;
+	Update_char_notation(); 
+	Update_display_string();
+	return *this;
 }
 int& Date::operator-=(int &prawy) {
-	int temp = this->exact_date - prawy;
-	return temp;
+	this->exact_date = this->exact_date - prawy;
+	Update_char_notation();
+	Update_display_string();
+	return this->exact_date;
 }
- 
-void Date::Wypisz(){
-	std::cout << className << " to:";
-	std::cout << cDisplay_date << std::endl;
+
+std::ostream & operator<<(std::ostream & screen, const Date & d)
+{
+	for (int i = 0; i < d.display_string_length; i++)
+	{
+		screen << d.cDisplay_date[i];
+	}
+	screen << ' ';
+	return screen;
 }
+
+  
 
 Date::~Date(){  
 	//delete cDisplay_date; 

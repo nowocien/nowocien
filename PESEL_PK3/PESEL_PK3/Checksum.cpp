@@ -8,7 +8,7 @@ Checksum::Checksum() {
 Checksum::Checksum(const Pesel p)
 {
 	checksum =
-		p.getYear().int_array[0] * 9 + p.getYear().int_array[1] * 7
+		p.getYear().int_array[0] * 9 + p.getYear().int_array[1] * 7;
 		+ p.getMonth().int_array[0] * 3 + p.getMonth().int_array[1] * 1
 		+ p.getDay().int_array[0] * 9 + p.getDay().int_array[1] * 7
 		+ p.getPIN().int_array[0] * 3 + p.getPIN().int_array[1] * 1 + p.getPIN().int_array[2] * 9

@@ -6,10 +6,11 @@ Year::Year(){
 }
 
 Year::Year(int date){
-	className = (char*)"rok"; 
-	display_length = 4;
+	className = (char*)"rok";
 	this->exact_date = date;
-	this->cDisplay_date = new char[display_length];
+	this->display_date = date;
+	Update_char_notation();
+	Update_display_string();
 }
 
 

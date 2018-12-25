@@ -8,20 +8,25 @@ public:
     Date();
 	Date(int date);
 	 
-	void Wypisz(); 
-	void Udpate_offset_and_char_notatnion(int offset); 
-	void Update_char_notation();
 
-	int &operator+=(int &);
+	Date &operator+=(int &);
 	int &operator-=(int &);
+	friend std::ostream & operator<<(std::ostream & screen, const Date & d);
 
 	int* int_array;
+	char* cDisplay_date;
+	int display_string_length;
+	 
+	void SetOffset(int);
 
-protected:
+protected: 
+	char* className;
 	int exact_date;
 	int display_date ;
-	char* cDisplay_date;
-	char* className;
-	int display_length;
+
+	int int_array_length;
+
+	void Update_char_notation();
+	void Update_display_string();
 };
 

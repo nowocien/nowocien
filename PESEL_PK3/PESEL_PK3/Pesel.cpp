@@ -2,9 +2,7 @@
 #include "Pesel.h"
 #include "Date.h" 
 
-Pesel::Pesel(const char* pesel)
-{
-
+Pesel::Pesel(const char* pesel){
 }
 
 Pesel::Pesel(int year, int month, int day, int pin, int checksum)
@@ -16,18 +14,6 @@ Pesel::Pesel(int year, int month, int day, int pin, int checksum)
 	this->checksum = checksum;
 	this->pin = PIN(pin); 
 	
-
-	this->day.Udpate_offset_and_char_notatnion(0);
-	this->day.Wypisz();
-	this->day.Update_char_notation();
-
-	this->month.Udpate_offset_and_char_notatnion(0);
-	this->month.Wypisz();
-	this->month.Update_char_notation();
-
-	this->year.Udpate_offset_and_char_notatnion(1900);
-	this->year.Wypisz();
-	this->year.Update_char_notation();
 }
 
 Pesel::Pesel(long long int number)
@@ -47,39 +33,30 @@ Pesel::Pesel(long long int number)
 	//brak koniecznosci podawania PESEL w innej zmiennej niz int (np *char) poniewa¿ ka¿dy miesiac musi 
 	//skladaæ sie z numerów wiekszych ni¿ jeden a rok nawet 2000 poprawnie zostanie zinterpretowany ;
 
-	//this->sex = Gender::analiseSex(this->pin);
 
 }
 
-std::ostream & operator<<(std::ostream & ekran, const Pesel & p)
-{
-	int _genderMark = p.pin.gender.get_number();
-
-	ekran << p.year.int_array[0] << p.year.int_array[1] << p.month.int_array[0]
-		<< p.month.int_array[1] << p.day.int_array[0] << p.day.int_array[1]
+std::ostream & operator<<(std::ostream & screen, const Pesel & p)
+{ 
+	screen << p.getYear().int_array[0] << p.getYear().int_array[1] << p.getMonth().int_array[0]
+		<< p.getMonth().int_array[1] << p.getDay().int_array[0] << p.getDay().int_array[1]
 		<< p.pin.int_array[0] << p.pin.int_array[1] << p.pin.int_array[2]
-		<< _genderMark << p.checksum <<std::endl;
-	return ekran;
+		<< p.pin.gender.get_number() << p.checksum <<std::endl;
+	return screen;
 }
 
-
-Day Pesel::getDay()const {
+Day Pesel::getDay()const { 
 	return day;
 }
-
-Month Pesel::getMonth()const {
+Month Pesel::getMonth()const { 
 	return month;
 }
-
-Year Pesel::getYear()const {
+Year Pesel::getYear()const { 
 	return year;
 }
-
 PIN Pesel::getPIN()const {
 	return pin;
 }
-
-
 Pesel::~Pesel()
 {
 }

@@ -22,15 +22,17 @@ public:
 	Month getMonth()const;
 	Year getYear()const;
 	PIN getPIN()const;
+
+
+	Day day;
+	Month month;
+	Year year;
 	
 	friend std::ostream & operator<<(std::ostream & screen, const Pesel & p);
 
 
 private:	
 	
-	Day day;
-	Month month;
-	Year year;
 	PIN pin;
 	int checksum; 
 	

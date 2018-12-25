@@ -11,15 +11,19 @@ Month::Month() {
 
 Month::Month(int date){
 	className = (char*)"miesiac";
-	display_length = 2;
 	this->exact_date = date;
-	this->cDisplay_date = new char[display_length];
+	this->display_date = date;
+	Update_char_notation();
+	Update_display_string();
 }
 
 
-void Month::Udpate_offset_and_char_notatnion(int offset){ 
-	display_date = offset + exact_date;
+void Month::Update_display_string() {
+	display_date = exact_date;
 	cDisplay_date = (char*)cMonth_names[display_date-1];
+	display_string_length = strlen(cDisplay_date);
 }
+ 
+
 
  

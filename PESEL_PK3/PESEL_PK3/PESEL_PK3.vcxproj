@@ -149,7 +149,6 @@
   <ItemGroup>
     <ClInclude Include="Checksum.h" />
     <ClInclude Include="Date.h" />
-    <ClInclude Include="Date_of_birth.h" />
     <ClInclude Include="Day.h" />
     <ClInclude Include="Gender.h" />
     <ClInclude Include="Month.h" />
@@ -163,7 +162,6 @@
   <ItemGroup>
     <ClCompile Include="Checksum.cpp" />
     <ClCompile Include="Date.cpp" />
-    <ClCompile Include="Date_of_birth.cpp" />
     <ClCompile Include="Day.cpp" />
     <ClCompile Include="Gender.cpp" />
     <ClCompile Include="Month.cpp" />
