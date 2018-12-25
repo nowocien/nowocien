@@ -4,7 +4,6 @@ class Year : public Date
 {
 public:
 	Year();
-	Year(int date);
-	~Year();
+	Year(int date); 
 };
 
