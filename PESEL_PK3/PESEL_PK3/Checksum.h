@@ -4,7 +4,7 @@
 class Checksum
 {
 public:
-	Checksum(Pesel );
+	Checksum(Pesel);
 	~Checksum();
 
 	int get();
