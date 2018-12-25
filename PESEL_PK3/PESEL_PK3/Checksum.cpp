@@ -2,6 +2,9 @@
 #include "Checksum.h"
 
 
+Checksum::Checksum() {
+}
+
 Checksum::Checksum(Pesel p)
 {
 	checksum =

@@ -4,6 +4,7 @@
 class Checksum
 {
 public:
+	Checksum();
 	Checksum(Pesel);
 	~Checksum();
 
