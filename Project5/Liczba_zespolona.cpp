@@ -70,17 +70,15 @@ Liczba_zespolona & Liczba_zespolona::operator+=(real lz)
 	this->RE += lz;
 	return *this;	
 } 
-
-
-
-
-
+ 
 //Zadanie 2 
 Liczba_zespolona & Liczba_zespolona::operator+(const Liczba_zespolona & z2)const
 {
 	Liczba_zespolona z3 = Liczba_zespolona(this->RE + z2.RE_get(), this->IM + z2.IM_get());
 	return z3;
 }
+
+
 
 //Zadanie 4
 Liczba_zespolona & Liczba_zespolona::operator-(const Liczba_zespolona & z2)const
@@ -93,16 +91,12 @@ Liczba_zespolona & Liczba_zespolona::operator-(const Liczba_zespolona & z2)const
 //Zadanie 5
 real & Liczba_zespolona::operator[](int i) const
 {
+	real to_return;
 	if (i == 0)
-	{
-		real im = this->IM;
-		return im;
-	}
+		to_return = this->IM; 
 	else  
-	{
-		real re = this->RE;
-		return re;
-	} 
+		to_return = this->RE; 
+	return to_return;
 }
 
 
