@@ -7,6 +7,7 @@ Lists::Lists(Pesel p)
 {
 	next = this;
 	pesel = p;
+	counter++;
 }
  
 void Lists::add(Pesel toAdd) {
@@ -25,16 +26,16 @@ Lists* Lists::nextElement() {
 void Lists::remove() {
 	//usuwa nastepny
 
+	counter--;
 	Lists *toDelete = this->next;
 	this->next = this->next->next;
 	 
 	delete toDelete;
-	counter--;
 }
  
 Lists::~Lists()
-{
-	remove();
+{/*
+	while (counter > 0)
+		remove();*/
 	delete next;
-	delete pesel;
 }

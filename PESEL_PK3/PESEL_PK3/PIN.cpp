@@ -19,6 +19,10 @@ PIN::PIN(int _pin) {
 }
   
 
+int PIN::getPin() {
+	return pin;
+}
+
 PIN::~PIN(){
 	//delete int_array;
 }

@@ -13,6 +13,8 @@ public:
 	Date& operator-=(int);
 	friend std::ostream & operator<<(std::ostream & screen, const Date & d);
 
+	int getExactDate();
+
 	int* int_array;
 	char* cDisplay_date;
 	int display_string_length;

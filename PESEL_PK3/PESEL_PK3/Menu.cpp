@@ -2,6 +2,8 @@
 #include "Menu.h"
 #include "Pesel.h"
 #include "Checksum.h"
+#include "Files.h"
+#include "Lists.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -11,13 +13,16 @@ Menu::Menu()
 {
 	srand(time(NULL));
 	char action;
-	system("cls");
+	system("cls"); 
+	
+	Lists *list = new Lists(Pesel());
 
 	do
 	{
-
 		std::cout << std::endl << "1 - analiza numeru pesel";
 		std::cout << std::endl << "2 - generowanie numeru pesel";
+		std::cout << std::endl << "3 - czytaj numery z pliku";
+		std::cout << std::endl << "4 - wypisz";
 		std::cout << std::endl;
 		std::cin >> action;
 
@@ -28,7 +33,12 @@ Menu::Menu()
 			break;
 		case '2': //generowanie nowego numeru
 			generatePesel();
-
+			break;
+		case '3': //czytanie numerow z pliku 
+			list = ReadFile();
+			break;
+		case '4': //Wypisz nuemry
+			WriteRedPesels(list);
 			break;
 		default:
 			break;
@@ -36,11 +46,35 @@ Menu::Menu()
 
 	} while (action != 'x');
 
-
-
 }
 
+Lists* Menu::ReadFile()
+{
 
+	//std::cout << std::endl << "Podaj nazwe pliku: ";
+
+	Files file1;
+	Pesel temporary;
+	file1.f >> temporary;
+	Lists *PeselList = new Lists(temporary);
+
+	while (!(temporary == Pesel()))
+	{  
+		file1.f >> temporary;
+		PeselList->add(temporary);
+	}
+	 
+	return PeselList;
+}
+
+void Menu::WriteRedPesels(Lists* list)
+{
+	for (int i = 0; i < list->counter; i++)
+	{
+		std::cout << list->pesel.getDay() << list->pesel.getMonth() << list->pesel.getYear() << std::endl;
+		list = list->nextElement();
+	}
+}
 
 void Menu::peselAnalise() {
 

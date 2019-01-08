@@ -1,4 +1,5 @@
 #pragma once
+#include "Lists.h"
 class Menu
 {
 public:
@@ -6,6 +7,8 @@ public:
 	~Menu();
 	void generatePesel();
 	void peselAnalise();
+	Lists* ReadFile();
+	void WriteRedPesels(Lists*);
 
 };
 

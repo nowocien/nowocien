@@ -17,7 +17,7 @@ Pesel::Pesel(int year, int month, int day, int pin, int checksum)
 	 
 	this->checksum = checksum;
 	this->pin = PIN(pin); 
-	
+	someAmendments();
 }
 
 Pesel::Pesel(long long int number)
@@ -34,7 +34,19 @@ Pesel::Pesel(long long int number)
 	this->month = Month(number % 100);
 	number /= 100;
 	this->year = Year(number % 100);
-	 
+	someAmendments();
+}
+
+void Pesel::someAmendments()
+{
+	if (month.getExactDate() > 20)
+	{
+		year.SetOffset(2000);
+		month -= 20;
+	}
+	else
+		year.SetOffset(1900);
+	month.Update_display_string();
 }
 
 std::ostream & operator<<(std::ostream & screen, const Pesel & p)
@@ -46,6 +58,17 @@ std::ostream & operator<<(std::ostream & screen, const Pesel & p)
 	return screen;
 }
 
+bool & Pesel::operator==(const Pesel &p) const  {
+	bool toReturn = false;
+	if (this->getDay().getExactDate() == p.getDay().getExactDate())
+		if (this->getMonth().getExactDate() == p.getMonth().getExactDate())
+			if (this->getYear().getExactDate() == p.getYear().getExactDate())
+				if (this->getPIN().getPin() == p.getPIN().getPin())
+					if (this->getPIN().gender.get_number() == p.getPIN().gender.get_number())
+						toReturn = true;
+					
+	return toReturn;
+}
 
 std::istream & operator >> (std::fstream & file, Pesel &p)
 { 
@@ -58,10 +81,7 @@ std::istream & operator >> (std::fstream & file, Pesel &p)
 		p = Pesel(atoll(dane));
 	}
 	else
-	{
-		int a = 0;
-		a++;
-	}
+		p = Pesel();
 
 	return file;
 }

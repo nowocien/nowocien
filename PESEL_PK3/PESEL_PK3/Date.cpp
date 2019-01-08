@@ -63,6 +63,11 @@ Date & Date::operator-=(int prawy) {
 	return *this;
 }
 
+int Date::getExactDate()
+{
+	return exact_date;
+}
+
 std::ostream & operator<<(std::ostream & screen, const Date & d)
 {
 	for (int i = 0; i < d.display_string_length; i++)

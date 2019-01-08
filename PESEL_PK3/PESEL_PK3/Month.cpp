@@ -13,14 +13,14 @@ Month::Month(int date){
 	this->exact_date = date;
 	this->display_date = date;
 	Update_char_notation();
-	Update_display_string();
 }
 
 
 void Month::Update_display_string() {
 	display_date = exact_date;
-	cDisplay_date = (char*)cMonth_names[display_date-1];
+	cDisplay_date = (char*)cMonth_names[display_date-1];	
 	display_string_length = strlen(cDisplay_date);
+
 }
  
 

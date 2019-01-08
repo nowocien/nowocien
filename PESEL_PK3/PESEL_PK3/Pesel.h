@@ -21,7 +21,8 @@ public:
 	Day getDay()const;
 	Month getMonth()const;
 	Year getYear()const;
-	PIN getPIN()const;
+	PIN getPIN()const; 
+	void someAmendments();
 
 	int checksum;
 
@@ -29,6 +30,7 @@ public:
 	Month month;
 	Year year;
 	
+	bool & operator==(const Pesel &p) const;
 	friend std::ostream & operator<<(std::ostream & screen, const Pesel & p);
 	friend std::istream & operator >> (std::fstream & file, Pesel & p);
 
