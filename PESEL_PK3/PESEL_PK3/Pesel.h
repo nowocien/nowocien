@@ -11,7 +11,7 @@ class Pesel
 {
 	
 public:
-//	Pesel();
+ 	Pesel();
 	~Pesel();
 
 	Pesel(int, int, int, int, int); 
@@ -30,6 +30,7 @@ public:
 	Year year;
 	
 	friend std::ostream & operator<<(std::ostream & screen, const Pesel & p);
+	friend std::istream & operator >> (std::fstream & file, Pesel & p);
 
 
 private:	

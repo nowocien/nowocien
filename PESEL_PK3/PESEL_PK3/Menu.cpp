@@ -12,17 +12,14 @@ Menu::Menu()
 	srand(time(NULL));
 	char action;
 	system("cls");
-	std::cout << std::endl << "1 - analiza numeru pesel";
-	std::cout << std::endl << "2 - generowanie numeru pesel"; 
-	std::cout << std::endl;
 
-
-	while (std::cin>> action)
+	do
 	{
-		system("cls");
+
 		std::cout << std::endl << "1 - analiza numeru pesel";
 		std::cout << std::endl << "2 - generowanie numeru pesel";
 		std::cout << std::endl;
+		std::cin >> action;
 
 		switch (action)
 		{
@@ -37,7 +34,7 @@ Menu::Menu()
 			break;
 		}
 
-	}
+	} while (action != 'x');
 
 
 
@@ -57,7 +54,7 @@ void Menu::peselAnalise() {
 	{
 		std::cout << std::endl << "PESEL prawidlowy" << std::endl;
 		std::cout << "Osoba o podnaym numerze urodzila sie " << p.getDay();
-		std::cout << p.getMonth() << std::endl; 
+		std::cout << p.getMonth() << p.getYear() << std::endl;
 		std::cout << "Osoba z podanym numerem jest ";
 		if (p.getPIN().gender.get_mark() == 0)
 			std::cout << "mezczyzna." << std::endl;
